@@ -1,0 +1,9 @@
+image: jackfirth/racket:7.2
+
+test:
+  before_script:
+    - apt-get update && apt-get install libgccjit-6-dev
+  script:
+    - racket test/hello-world.rkt > file
+    - echo 'hello world' > expected
+    - cmp --silent expected file
