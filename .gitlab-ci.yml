@@ -3,6 +3,7 @@ image: jackfirth/racket:7.2
 test:
   before_script:
     - apt-get update && apt-get install -y libgccjit-6-dev
+    - dpkg-query -L libgccjit-6-dev
   script:
     - racket test/hello-world.rkt > file
     - echo 'hello world' > expected
