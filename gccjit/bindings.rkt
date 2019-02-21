@@ -10,7 +10,7 @@
 (provide
  (c:contract-out
   [gcc-jit-context-get-type
-   (gcc-jit-context? gcc-jit-type? . c:-> . gcc-jit-type?)]
+   (gcc-jit-context? gcc-jit-type-id? . c:-> . gcc-jit-type?)]
   [gcc-jit-context-acquire
    (c:-> gcc-jit-context?)]
   [gcc-jit-context-set-bool-option
@@ -122,7 +122,7 @@
     GCC_JIT_TYPE_COMPLEX_DOUBLE
     GCC_JIT_TYPE_COMPLEX_LONG_DOUBLE))
 (define _gcc-jit-types (_enum gcc-jit-types/values))
-(define (gcc-jit-types? x) (memq x gcc-jit-types/values))
+(define (gcc-jit-type-id? x) (memq x gcc-jit-types/values))
 
 (define gcc-jit-set-bool-option/values
   '(GCC_JIT_BOOL_OPTION_DEBUGINFO

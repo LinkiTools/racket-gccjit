@@ -39,7 +39,7 @@
 
 
   (define block
-    (gcc-jit-function-new-block func #false))
+    (gcc-jit-function-new-block func ""))
 
   (gcc-jit-block-add-eval
    block
